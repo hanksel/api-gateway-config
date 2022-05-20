@@ -1,0 +1,22 @@
+# openapi2-run.yaml
+swagger: '2.0'
+info:
+  title: api-title-hanksel
+  description: Sample API on API Gateway with a Cloud Run backend
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+x-google-backend:
+  address: https://cloudrun-jenkins-n3djeltq5a-uk.a.run.app
+paths:
+  /:
+    get:
+      summary: Cloud Run hello world
+      operationId: hello
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
